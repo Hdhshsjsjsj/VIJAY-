@@ -44,7 +44,7 @@ REQ_CHANNEL = environ.get("REQ_CHANNEL", False)
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI) 
 
 # Others 
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', "-1001689353663")) 
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', "-1002190351641")) 
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamEvamaria') 
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True) 
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
