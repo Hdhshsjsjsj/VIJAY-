@@ -472,7 +472,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⊗Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⊗', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('👑 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
-                    InlineKeyboardButton('⊙ Sᴜᴘᴘᴏʀᴛ Lɪꜱᴛ', url='support')
+                    InlineKeyboardButton('⊙ Sᴜᴘᴘᴏʀᴛ Lɪꜱᴛ', callback_data="group_info")
                 ],[
                     InlineKeyboardButton('🛠 Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⌂ Aʙᴏᴜᴛ', callback_data='about'),
@@ -531,6 +531,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "group_info":
+        buttons = [[
+            InlineKeyboardButton("Bᴏᴛ Dᴀᴛᴀʙᴀꜱᴇ", url="https://t.me/Leomessi_10_19")
+                  ],[
+            InlineKeyboardButton("Gʀᴏᴜᴘ", url="https://t.me/cinemaworld_123"),
+            InlineKeyboardButton("​Cʜᴀɴɴᴇʟ", url="t.me/cinemaworld_update")
+                  ],[
+            InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/cinemaworld_123"),
+            InlineKeyboardButton("Uᴘᴅᴀᴛᴇꜱ", url="t.me/moviebot_channel")
+                  ],[
+            InlineKeyboardButton("⇍Bᴀᴄᴋ", callback_data="start")
+        ]]   
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GROUP_INFO,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
